@@ -70,6 +70,38 @@ class Doubleroom extends Singleroom implements Serializable
         this.gender2=gender2;
     }
 }
+
+class TripleRoom extends Singleroom implements Serializable
+{ 
+    String name2;
+    String contact2;
+    String gender2;  
+
+    String name3;
+    String contact3;
+    String gender3;  
+    
+    TripleRoom()
+    {
+        this.name="";
+        this.name2="";
+        this.name3="";
+    }
+    TripleRoom(String name,String contact,String gender,String name2,String contact2,String gender2,String name3,String contact3,String gender3)
+    {
+        this.name=name;
+        this.contact=contact;
+        this.gender=gender;
+
+        this.name2=name2;
+        this.contact2=contact2;
+        this.gender2=gender2;
+        
+        this.name3=name3;
+        this.contact3=contact3;
+        this.gender3=gender3;
+    }
+}
 class NotAvailable extends Exception
 {
     @Override
@@ -85,6 +117,7 @@ class holder implements Serializable
     Doubleroom deluxe_doublerrom[]=new Doubleroom[20]; //Deluxe
     Singleroom luxury_singleerrom[]=new Singleroom[10]; //Luxury
     Singleroom deluxe_singleerrom[]=new Singleroom[20]; //Deluxe
+
 }
 
 class Hotel
@@ -238,6 +271,10 @@ class Hotel
                 break;
             case 4:System.out.println("Number of single beds : 1\nAC : No\nFree breakfast : Yes\nCharge per day:1200 ");
                 break;
+            case 5:System.out.println("Number of single beds : 1\nNumber of double beds : 1\nAC : Yes\nFree breakfast : Yes\nCharge per day:1500  ");
+                    break;
+            case 6:System.out.println("Number of single beds : 1\nNumber of double beds : 1\nAC : No\nFree breakfast : Yes\nCharge per day:1000 ");
+                    break;
             default:
                 System.out.println("Enter valid option");
                 break;
@@ -518,15 +555,15 @@ public class Main {
         System.out.println("\nEnter your choice :\n1.Display room details\n2.Display room availability \n3.Book\n4.Order food\n5.Checkout\n6.Exit\n");
         ch = sc.nextInt();
         switch(ch){
-            case 1: System.out.println("\nChoose room type :\n1.Luxury Double Room \n2.Deluxe Double Room \n3.Luxury Single Room \n4.Deluxe Single Room\n");
+            case 1: System.out.println("\nChoose room type :\n1.Luxury Double Room \n2.Deluxe Double Room \n3.Luxury Single Room \n4.Deluxe Single Room\n5.Luxury Triple Room \n6.Deluxe Triple Room\n");
                     ch2 = sc.nextInt();
                     Hotel.features(ch2);
                 break;
-            case 2:System.out.println("\nChoose room type :\n1.Luxury Double Room \n2.Deluxe Double Room \n3.Luxury Single Room\n4.Deluxe Single Room\n");
+            case 2:System.out.println("\nChoose room type :\n1.Luxury Double Room \n2.Deluxe Double Room \n3.Luxury Single Room\n4.Deluxe Single Room\n5.Luxury Triple Room \n6.Deluxe Triple Room\n");
                      ch2 = sc.nextInt();
                      Hotel.availability(ch2);
                 break;
-            case 3:System.out.println("\nChoose room type :\n1.Luxury Double Room \n2.Deluxe Double Room \n3.Luxury Single Room\n4.Deluxe Single Room\n");
+            case 3:System.out.println("\nChoose room type :\n1.Luxury Double Room \n2.Deluxe Double Room \n3.Luxury Single Room\n4.Deluxe Single Room\n5.Luxury Triple Room \n6.Deluxe Triple Room\n");
                      ch2 = sc.nextInt();
                      Hotel.bookroom(ch2);                     
                 break;
